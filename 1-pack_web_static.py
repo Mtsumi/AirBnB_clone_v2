@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-# A Fabfile to generates a .tgz archive from the contents of web_static.
+# Fabfile to generates a .tgz archive from the contents of web_static.
 import os.path
 from datetime import datetime
-from fabric.api import local
+from fabric.api import local, run, env
 
+env.hosts = ['ubuntu@3.238.87.75', 'ubuntu@3.234.245.243']
+env.key_filename = '~/.ssh/school'
 
 def do_pack():
     """Create a tar gzipped archive of the directory web_static."""
-    dt = datetime.now()
+    dt = datetime.utcnow()
     file = "versions/web_static_{}{}{}{}{}{}.tgz".format(dt.year,
                                                          dt.month,
                                                          dt.day,
@@ -19,4 +21,4 @@ def do_pack():
             return None
     if local("tar -cvzf {} web_static".format(file)).failed is True:
         return None
-    return 
+    return file
