@@ -2,10 +2,8 @@
 # Fabfile to generates a .tgz archive from the contents of web_static.
 import os.path
 from datetime import datetime
-from fabric.api import local, run, env
+from fabric.api import local
 
-env.hosts = ['ubuntu@3.238.87.75', 'ubuntu@3.234.245.243']
-env.key_filename = '~/.ssh/school'
 
 def do_pack():
     """Create a tar gzipped archive of the directory web_static."""
