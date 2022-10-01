@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# Sets up a web server for deployment of web_static.
+# Sets up a web server for deployment of web_static
 
+#nginx installation
 apt-get update
 apt-get install -y nginx
 
+#creating directories
 mkdir -p /data/web_static/releases/test/
 mkdir -p /data/web_static/shared/
 echo "Hello World!" > /data/web_static/releases/test/index.html
