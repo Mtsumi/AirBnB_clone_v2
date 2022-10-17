@@ -25,7 +25,8 @@ class FileStorage:
         """returns a dictionary
         Return:
             returns a dictionary of __object
-            If a cls is specified, returns a dictionary of objects of that type.
+            If a cls is specified,
+            returns a dictionary of objects of that type.
         Otherwise, returns the __objects dictionary.
         """
         if cls:
