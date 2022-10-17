@@ -15,14 +15,17 @@ def hello():
     """Displays 'Hello HBNB!'"""
     return 'Hello HBNB!'
 
+
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """Displays 'HBNB'"""
     return 'HBNB'
 
+
 @app.route('/c/<text>', strict_slashes=False)
-def c_is_fun(text)
-     """Displays 'C' followed by the value of <text>."""
+def c_is_fun(text):
+    """Displays 'C' followed
+    by the value of <text>."""
     text = text.replace("_", " ")
     return "C {}".format(text)
 
